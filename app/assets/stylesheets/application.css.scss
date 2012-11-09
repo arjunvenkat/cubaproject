@@ -1,0 +1,48 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+
+@import 'variables';
+@import 'bootstrap';
+
+.content-container {
+  padding: 20px;
+}
+
+#about {
+
+}
+
+body {
+  background-color: #6d3807;
+}
+
+#page {
+  background-color: #c3a88c;
+  //background-color: #6d3807;
+
+}
+
+#page_container {
+  /*background-color: gray;*/
+  min-height: 700px;
+  width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.text-container {
+  background-color: $grayLighter;
+
+}

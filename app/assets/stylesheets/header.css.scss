@@ -1,0 +1,58 @@
+@import 'variables';
+
+#header {
+  padding-top: 20px;
+  background-image: url('cuba_bg.jpg');
+  background-position: -50px -240px;
+  min-height: 120px;
+
+  .navbar {
+    position: relative;
+    .site-heading {
+      font-size: 30px;
+      line-height: 5px;
+      margin-bottom: -2px;
+      margin-left: 97px;
+      color: $white;
+      text-shadow: -1px 0 black, 0 1px black,
+          1px 0 black, 0 -1px black;
+    }
+    .site-heading2 {
+      float: left;
+      font-size: 40px;
+      line-height: 45px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      color: $white;
+      text-shadow: -1px 0 black, 0 1px black,
+          1px 0 black, 0 -1px black;
+    }
+
+    .site-heading3 {
+      float: left;
+      font-size: 60px;
+      line-height: 30px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      color: $red;
+      text-shadow: -1px 0 black, 0 1px black,
+          1px 0 black, 0 -1px black;
+    }
+
+    .site-heading4 {
+      clear: both;
+      position: relative;
+      color: $blue;
+      font-size: 45px;
+      line-height: 22px;
+      margin-left: 16px;
+      text-shadow: -1px 0 black, 0 1px black,
+          1px 0 black, 0 -1px black;
+      z-index: 1;
+    }
+  }
+
+
+}
+
+

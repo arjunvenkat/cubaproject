@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="title span10 offset1">
+    <h2 class="site-heading"><%= @page.title %></h2>
+  </div>
+  <div id="about" class="text-container span10 offset1">
+    <% @page.parts.each_with_index do |part, i| %>
+        <div class="row ">
+          <div class="span6 text-container">
+            <%= simple_format part.body %>
+          </div>
+          <div class="span4">
+            <p></p>
+          </div>
+        </div>
+    <% end %>
+  </div>
+</div>
