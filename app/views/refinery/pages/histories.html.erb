@@ -1,24 +1,35 @@
 <div class="row">
-  <div id="histories" class="span10 offset1">
+  <div class="title span12">
+    <h2 class="page-heading"><%= @page.title %></h2>
+  </div>
+  <div id="histories" class="span12">
     <% @page.parts.each_with_index do |part, i| %>
       <% if i.even? %>
         <div class="row">
-          <div class="span6">
-            <%= simple_format part.body %>
+          <div class="span7">
+            <div class="content-container">
+              <%= simple_format part.body %>
+            </div>
           </div>
-          <div class="span4">
-            <p></p>
-            <%= image_tag(@page.images[i].url) %>
+          <div class="span5">
+            <div class="content-container">
+              <p></p>
+              <%= image_tag(@page.images[i].url) %>
+            </div>
           </div>
         </div>
       <% else %>
         <div class="row">
-          <div class="span4">
-            <p></p>
-            <%= image_tag(@page.images[i].url) %>
+          <div class="span5">
+            <div class="content-container">
+              <p></p>
+              <%= image_tag(@page.images[i].url) %>
+            </div>
           </div>
-          <div class="span6">
-            <%= simple_format part.body %>
+          <div class="span7">
+            <div class="content-container">
+              <%= simple_format part.body %>
+            </div>
           </div>
         </div>
       <% end %>

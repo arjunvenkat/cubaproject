@@ -17,7 +17,7 @@
       padding-right: 0;
     #menu {
       li {
-        border-left: 2px solid $grayLight;
+        border-left: 2px solid $navbarLinkBackgroundHover;
         min-height: 36px;
         width: 150px;
       }
@@ -46,6 +46,9 @@
   }
 }
 
+#menu .nav li.selected {
+  background-color: white;
+}
 .dropdown-menu li > a:hover,
 .dropdown-menu li > a:focus,
 .dropdown-submenu:hover > a,

@@ -7,6 +7,8 @@ Cubaproject2::Application.routes.draw do
   # We ask that you don't use the :as option here, as Refinery relies on it being the default of "refinery"
   mount Refinery::Core::Engine, :at => '/'
 
+  get '/switch_lang' => 'sessions#switchLang', :as => 'switch_lang'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

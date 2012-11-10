@@ -51,3 +51,5 @@ gem 'refinerycms-copywriting', '~> 2.0.0'
 #  gem 'refinerycms-blog', '~> 2.0.0'
 #  gem 'refinerycms-inquiries', '~> 2.0.0'
  gem 'refinerycms-page-images', '~> 2.0.0'
+
+gem 'refinerycms-participants', :path => 'vendor/extensions'

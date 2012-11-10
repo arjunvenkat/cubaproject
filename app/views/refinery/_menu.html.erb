@@ -19,6 +19,11 @@
                        :menu_levels => local_assigns[:menu_levels],
                        :apply_css => true #if you don't care about class='first' class='last' or class='selected' set apply_css to false for speed.
                      } -%>
+          <% if ::I18n.locale == :es %>
+            <li><%= link_to 'English', '/' %> </li>
+          <% else %>
+            <li><%= link_to 'Espanol', '/es' %> </li>
+          <% end %>
         </ul>
 
       </nav>

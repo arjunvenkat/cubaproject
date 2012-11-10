@@ -25,12 +25,22 @@
 }
 
 body {
-  background-color: #6d3807;
+  background-color: $navbarLinkBackgroundHover;
+}
+
+.inline {
+  display: inline;
+  float: left;
+}
+
+.language-link {
+  text-color: $white;
+  padding-bottom: 0;
 }
 
 #page {
-  background-color: #c3a88c;
-  //background-color: #6d3807;
+  //background-color: #c3a88c;
+  background-color: $navbarLinkBackgroundHover;
 
 }
 

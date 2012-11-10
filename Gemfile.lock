@@ -1,3 +1,9 @@
+PATH
+  remote: vendor/extensions
+  specs:
+    refinerycms-participants (1.0)
+      refinerycms-core (~> 2.0.8)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -186,6 +192,7 @@ DEPENDENCIES
   refinerycms-copywriting (~> 2.0.0)
   refinerycms-i18n (~> 2.0.0)
   refinerycms-page-images (~> 2.0.0)
+  refinerycms-participants!
   sass-rails (~> 3.2.3)
   sqlite3
   uglifier (>= 1.0.3)

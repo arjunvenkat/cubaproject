@@ -1,15 +1,20 @@
+
+
 <div class="row">
-  <div class="title span10 offset1">
-    <h2 class="site-heading"><%= @page.title %></h2>
+  <div class="title span12">
+    <div class="inline">
+      <h2 class="page-heading inline"><%= @page.title %></h2>
+    </div>
   </div>
-  <div id="about" class="text-container span10 offset1">
+
+
+  <div id="about" class="text-container span12">
     <% @page.parts.each_with_index do |part, i| %>
-        <div class="row ">
-          <div class="span6 text-container">
+        <div class="row">
+          <div class="span12">
+            <div class="text-container content-container">
             <%= simple_format part.body %>
-          </div>
-          <div class="span4">
-            <p></p>
+            </div>
           </div>
         </div>
     <% end %>
