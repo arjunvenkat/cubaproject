@@ -3,19 +3,25 @@
               :object => @clip,
               :include_object_name => true %>
 
-  
+
   <div class='field'>
     <%= f.label :name -%>
     <%= f.text_field :name, :class => 'larger widest'  -%>
 
   </div>
-  
+
   <div class='field'>
     <%= f.label :length -%>
     <%= f.text_field :length  -%>
 
   </div>
-  
+
+  <div class='field'>
+    <%= f.label :interview_id -%>
+    <%= f.collection_select :interview_id, ::Refinery::Interviews::Interview.all, :id, :full_name, :prompt => true  -%>
+
+  </div>
+
   <div class='field'>
     <%= f.label :file -%>
     <%= render '/refinery/admin/resource_picker',
@@ -24,7 +30,7 @@
                :resource => @clip.file %>
 
   </div>
-  
+
   <%= render '/refinery/admin/form_actions', :f => f,
              :continue_editing => false,
              :delete_title => t('delete', :scope => 'refinery.clips.admin.clips.clip'),

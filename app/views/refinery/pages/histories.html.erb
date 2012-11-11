@@ -1,20 +1,32 @@
+<% interviews = ::Refinery::Interviews::Interview.all %>
+
 <div class="row">
   <div class="title span12">
     <h2 class="page-heading"><%= @page.title %></h2>
   </div>
   <div id="histories" class="span12">
-    <% @page.parts.each_with_index do |part, i| %>
+    <% interviews.each_with_index do |interview, i| %>
       <% if i.even? %>
         <div class="row">
           <div class="span7">
             <div class="content-container">
-              <%= simple_format part.body %>
+              <%= simple_format interview.description %>
+            </div>
+            <div class="content-container">
+              <ul>
+                <% interview.clips.each do |clip| %>
+                  <% file = ::Refinery::Resource.find_by_id(clip.file_id) %>
+                  <li class="clips"><%= link_to clip.name, file.url %></li>
+                <% end %>
+              </ul>
             </div>
           </div>
           <div class="span5">
             <div class="content-container">
               <p></p>
-              <%= image_tag(@page.images[i].url) %>
+              <% picture = ::Refinery::Image.find_by_id(interview.picture_id) %>
+              <%= image_tag(picture.url) %>
+              <%#= image_tag(interview.images[i].url) %>
             </div>
           </div>
         </div>
@@ -23,12 +35,21 @@
           <div class="span5">
             <div class="content-container">
               <p></p>
-              <%= image_tag(@page.images[i].url) %>
+              <% picture = ::Refinery::Image.find_by_id(interview.picture_id) %>
+              <%= image_tag(picture.url) %>
             </div>
           </div>
           <div class="span7">
             <div class="content-container">
-              <%= simple_format part.body %>
+              <%= simple_format interview.description %>
+            </div>
+            <div class="content-container">
+              <ul>
+                <% interview.clips.each do |clip| %>
+                  <% file = ::Refinery::Resource.find_by_id(clip.file_id) %>
+                  <li class="clips"><%= link_to clip.name, file.url %></li>
+                <% end %>
+              </ul>
             </div>
           </div>
         </div>
