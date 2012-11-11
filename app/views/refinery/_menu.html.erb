@@ -1,3 +1,4 @@
+
 <% # Collect the root items.
    # ::Refinery::Menu is smart enough to remember all of the items in the original collection.
 
@@ -6,12 +7,18 @@
     css = [(css || 'menu clearfix')].flatten.join(' ')
     hide_children = Refinery::Core.menu_hide_children if hide_children.nil?
 -%>
+  <% roots.each_with_index do |root, i| %>
+    <% if root[:title] == 'Participants' %>
+      <% roots = roots - [roots[i]] %>
+    <% end %>
+  <% end %>
 
     <div id='main-nav' class="navbar-inner">
 
       <nav id='menu' class='navbar <%= css %>'>
 
         <ul class="nav">
+          <li><%= link_to 'Home', '/' %></li>
           <%= render :partial => '/refinery/menu_branch', :collection => roots,
                      :locals => {
                        :hide_children => hide_children,

@@ -1,0 +1,29 @@
+nb:
+  refinery:
+    plugins:
+      clips:
+        title: Clips
+    clips:
+      admin:
+        clips:
+          actions:
+            create_new: Lag en ny Clip
+            reorder: Endre rekkefølgen på Clips
+            reorder_done: Ferdig å endre rekkefølgen Clips
+          records:
+            title: Clips
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Clips enda. Klikk på "Lag en ny Clip" for å legge til din første clip.
+          clip:
+            view_live_html: Vis hvordan denne clip ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne clip
+            delete: Fjern denne clip permanent
+      clips:
+        show:
+          other: Andre Clips
+  activerecord:
+    attributes:
+      'refinery/clips/clip':
+        name: Name
+        length: Length
+        file: File

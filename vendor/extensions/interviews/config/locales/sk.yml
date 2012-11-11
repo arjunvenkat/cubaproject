@@ -1,0 +1,32 @@
+sk:
+  refinery:
+    plugins:
+      interviews:
+        title: Interviews
+    interviews:
+      admin:
+        interviews:
+          actions:
+            create_new: Pridať Interview
+            reorder: Preusporiadať Interviews
+            reorder_done: Koniec radenia Interviews
+          records:
+            title: Interviews
+            sorry_no_results: Ľutujeme, ale neboli nájdené žiadne výsledky.
+            no_items_yet: Nie sú vytvorené žiadne Interviews. Kliknite na "Pridať Interview" pre pridanie prvého interview.
+          interview:
+            view_live_html: Zobraziť náhľad interview<br/><em>(otvorí sa v novom okne)</em>
+            edit: Upraviť interview
+            delete: Zmazať interview
+      interviews:
+        show:
+          other: Daľšie Interviews
+  activerecord:
+    attributes:
+      'refinery/interviews/interview':
+        first_name: First Name
+        last_name: Last Name
+        city: City
+        date_of_entry: Date Of Entry
+        description: Description
+        picture: Picture

@@ -1,0 +1,11 @@
+<% content_for :body do %>
+  <ul id="clips">
+    <% @clips.each do |clip| %>
+      <li>
+        <%= link_to clip.name, refinery.clips_clip_path(clip) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render '/refinery/content_page' %>

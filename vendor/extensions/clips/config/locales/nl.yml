@@ -1,0 +1,29 @@
+nl:
+  refinery:
+    plugins:
+      clips:
+        title: Clips
+    clips:
+      admin:
+        clips:
+          actions:
+            create_new: Maak een nieuwe Clip
+            reorder: Wijzig de volgorde van de Clips
+            reorder_done: Klaar met het wijzingen van de volgorde van de Clips
+          records:
+            title: Clips
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Clips. Druk op 'Maak een nieuwe Clip' om de eerste aan te maken.
+          clip:
+            view_live_html: Bekijk deze clip op de website <br/><em>(opent een nieuw venster)</em>
+            edit: Bewerk deze clip
+            delete: Verwijder deze clip voor eeuwig
+      clips:
+        show:
+          other: Andere Clips
+  activerecord:
+    attributes:
+      'refinery/clips/clip':
+        name: Name
+        length: Length
+        file: File

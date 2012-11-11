@@ -1,0 +1,29 @@
+en:
+  refinery:
+    plugins:
+      clips:
+        title: Clips
+    clips:
+      admin:
+        clips:
+          actions:
+            create_new: Add New Clip
+            reorder: Reorder Clips
+            reorder_done: Done Reordering Clips
+          records:
+            title: Clips
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Clips yet. Click "Add New Clip" to add your first clip.
+          clip:
+            view_live_html: View this clip live <br/><em>(opens in a new window)</em>
+            edit: Edit this clip
+            delete: Remove this clip forever
+      clips:
+        show:
+          other: Other Clips
+  activerecord:
+    attributes:
+      'refinery/clips/clip':
+        name: Name
+        length: Length
+        file: File

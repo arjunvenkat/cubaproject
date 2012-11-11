@@ -19,10 +19,12 @@
       li {
         border-left: 2px solid $navbarLinkBackgroundHover;
         min-height: 36px;
-        width: 150px;
+        width: 140px;
       }
       li:first-child {
         border: 0;
+        width: 70px;
+
       }
     }
   }
