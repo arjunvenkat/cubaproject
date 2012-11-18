@@ -38,6 +38,44 @@ body {
   padding-bottom: 0;
 }
 
+#histories-links {
+  height: 400px;
+  background-color: $white;
+  margin-bottom: 20px;
+  li {
+    list-style-type: none;
+  }
+}
+
+#map {
+  height: 400px;
+  img{max-width: inherit;}
+
+  .popup {
+    a {
+      margin-left: 10px;
+    }
+    h4 {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    h5 {
+      margin-bottom: 0;
+    }
+    p {
+      margin-bottom: 0;
+    }
+    div {
+      width: 150px;
+      float: left;
+    }
+    img {
+      width: 120px;
+      margin-right: 10px;
+    }
+  }
+}
+
 #page {
   //background-color: #c3a88c;
   background-color: $navbarLinkBackgroundHover;

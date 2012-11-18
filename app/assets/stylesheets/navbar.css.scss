@@ -24,7 +24,10 @@
       li:first-child {
         border: 0;
         width: 70px;
+      }
 
+      li:last {
+        border-right: 2px solid $navbarLinkBackgroundHover;
       }
     }
   }
@@ -45,11 +48,16 @@
   .navbar .nav > li > a {
     padding: 10px 15px 6px;
     text-shadow: none;
+
   }
+
 }
 
 #menu .nav li.selected {
-  background-color: white;
+  background-color: $navbarLinkBackgroundHover;
+  a {
+    color: white;
+  }
 }
 .dropdown-menu li > a:hover,
 .dropdown-menu li > a:focus,

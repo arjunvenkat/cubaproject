@@ -1,29 +1,51 @@
-<% interviews = ::Refinery::Interviews::Interview.all %>
+<% content_for :javascripts do %>
+  <%= javascript_include_tag 'map' %>
+<% end %>
+
 
 <div class="row">
   <div class="title span12">
     <h2 class="page-heading"><%= @page.title %></h2>
   </div>
+</div>
+
+<div class="row">
+    <div id="map" class="span8"></div>
+    <div id="histories-links"class="span4">
+      <div class="content-container">
+        <h3>Interview Participants</h3>
+        <ul>
+          <% @interviews.each do |interview| %>
+            <li><%= link_to interview.full_name, "/#{@page.title.parameterize}##{interview.full_name.parameterize}" %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+</div>
+
+<div class="row">
   <div id="histories" class="span12">
-    <% interviews.each_with_index do |interview, i| %>
+    <% @interviews.each_with_index do |interview, i| %>
+
       <% if i.even? %>
         <div class="row">
-          <div class="span7">
+          <div class="span7 history">
             <div class="content-container">
+              <a name="<%= interview.full_name.parameterize %>" class="anchor" ></a>
+              <h3><%= interview.full_name %></h3>
               <%= simple_format interview.description %>
             </div>
             <div class="content-container">
               <ul>
                 <% interview.clips.each do |clip| %>
                   <% file = ::Refinery::Resource.find_by_id(clip.file_id) %>
-                  <li class="clips"><%= link_to clip.name, file.url %></li>
+                  <li class="clips"><%= link_to clip.name, "/clips/#{clip.id}" %></li>
                 <% end %>
               </ul>
             </div>
           </div>
-          <div class="span5">
+          <div class="span5 history">
             <div class="content-container">
-              <p></p>
               <% picture = ::Refinery::Image.find_by_id(interview.picture_id) %>
               <%= image_tag(picture.url) %>
               <%#= image_tag(interview.images[i].url) %>
@@ -32,15 +54,16 @@
         </div>
       <% else %>
         <div class="row">
-          <div class="span5">
+          <div class="span5 history">
             <div class="content-container">
-              <p></p>
               <% picture = ::Refinery::Image.find_by_id(interview.picture_id) %>
               <%= image_tag(picture.url) %>
             </div>
           </div>
-          <div class="span7">
+          <div class="span7 history">
             <div class="content-container">
+              <a name="<%= interview.full_name.parameterize %>" class="anchor"></a>
+              <h3><%= interview.full_name %></h3>
               <%= simple_format interview.description %>
             </div>
             <div class="content-container">

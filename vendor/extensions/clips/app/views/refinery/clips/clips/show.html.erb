@@ -2,42 +2,75 @@
   <%= @clip.name %>
 <% end %>
 
-<% content_for :body do %>
-  <section>
-    <h1>Name</h1>
-    <p>
-      <%=raw @clip.name %>
-    </p>
-  </section>
-  <section>
-    <h1>Length</h1>
-    <p>
-      <%=raw @clip.length %>
-    </p>
-  </section>
-  <section>
-    <h1>File</h1>
-    <p>
-      <% if @clip.file.present? %>
-        <%= link_to 'file', @clip.file.url %>
-      <% else %>
-        file
-      <% end %>
-    </p>
-  </section>
+<% content_for :javascripts do %>
+  <%= javascript_include_tag 'jquery.jplayer.min' %>
 <% end %>
 
-<% content_for :side_body do %>
-  <aside>
-    <h2><%= t('.other') %></h2>
-    <ul id="clips">
-      <% @clips.each do |clip| %>
-        <li>
-          <%= link_to clip.name, refinery.clips_clip_path(clip) %>
-        </li>
-      <% end %>
-    </ul>
-  </aside>
-<% end %>
+<link href="/skin/blue.monday/jplayer.blue.monday.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
 
-<%= render '/refinery/content_page' %>
+
+<script type="text/javascript">
+//<![CDATA[
+var song_url = '<%= @clip.file.url %>'
+$(document).ready(function(){
+
+  $("#jquery_jplayer_1").jPlayer({
+    ready: function (event) {
+      $(this).jPlayer("setMedia", {
+        m4a: song_url
+      });
+    },
+    swfPath: "js",
+    supplied: "m4a, oga",
+    wmode: "window"
+  });
+});
+//]]>
+</script>
+  <div class="row">
+  <div class ="span6 offset3 content-container">
+   <div id="jquery_jplayer_1" class="jp-jplayer"></div>
+
+    <div id="jp_container_1" class="jp-audio">
+      <div class="jp-type-single">
+        <div class="jp-gui jp-interface">
+          <ul class="jp-controls">
+            <li><a href="javascript:;" class="jp-play" tabindex="1">play</a></li>
+            <li><a href="javascript:;" class="jp-pause" tabindex="1">pause</a></li>
+            <li><a href="javascript:;" class="jp-stop" tabindex="1">stop</a></li>
+            <li><a href="javascript:;" class="jp-mute" tabindex="1" title="mute">mute</a></li>
+            <li><a href="javascript:;" class="jp-unmute" tabindex="1" title="unmute">unmute</a></li>
+            <li><a href="javascript:;" class="jp-volume-max" tabindex="1" title="max volume">max volume</a></li>
+          </ul>
+          <div class="jp-progress">
+            <div class="jp-seek-bar">
+              <div class="jp-play-bar"></div>
+            </div>
+          </div>
+          <div class="jp-volume-bar">
+            <div class="jp-volume-bar-value"></div>
+          </div>
+          <div class="jp-time-holder">
+            <div class="jp-current-time"></div>
+            <div class="jp-duration"></div>
+
+            <ul class="jp-toggles">
+              <li><a href="javascript:;" class="jp-repeat" tabindex="1" title="repeat">repeat</a></li>
+              <li><a href="javascript:;" class="jp-repeat-off" tabindex="1" title="repeat off">repeat off</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="jp-title">
+          <ul>
+            <li><%=raw @clip.name %></li>
+          </ul>
+        </div>
+        <div class="jp-no-solution">
+          <span>Update Required</span>
+          To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>

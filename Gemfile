@@ -39,6 +39,13 @@ gem 'bootstrap-sass'
 # Deploy with Capistrano
 # gem 'capistrano'
 
+# Google Maps
+gem 'geocoder'
+
+# Instance variables in JS views
+gem 'gon'
+
+
 # To use debugger
 # gem 'debugger'
 
@@ -50,8 +57,7 @@ gem 'refinerycms-i18n', '~> 2.0.0'
 gem 'refinerycms-copywriting', '~> 2.0.0'
 #  gem 'refinerycms-blog', '~> 2.0.0'
 #  gem 'refinerycms-inquiries', '~> 2.0.0'
- gem 'refinerycms-page-images', '~> 2.0.0'
-
+gem 'refinerycms-page-images', '~> 2.0.0'
 
 gem 'refinerycms-interviews', :path => 'vendor/extensions'
 gem 'refinerycms-clips', :path => 'vendor/extensions'

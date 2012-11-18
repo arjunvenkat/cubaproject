@@ -1,5 +1,34 @@
+@import 'variables';
+
+.content-container {
+  h3 {
+    margin-top: 0;
+    line-height: 24px;
+  }
+}
+
 #histories {
-  background-color: white;
+
+
+  .history {
+    background-color: white;
+    margin-bottom: 20px;
+  }
+
+  .anchor {
+    margin: 0px;
+  }
+
+  a {
+    border-left: 2px solid grayDark;
+    color: $grayDark;
+    margin-left: 20px;
+    text-decoration: none;
+    &:hover {
+      color: $navbarLinkBackgroundHover;
+    }
+  }
+
 
   .clips {
     display: inline;

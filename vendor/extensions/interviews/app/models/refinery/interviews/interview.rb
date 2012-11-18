@@ -7,14 +7,20 @@ module Refinery
 
       acts_as_indexed :fields => [:first_name, :last_name, :city, :description]
 
-      validates :first_name, :presence => true, :uniqueness => true
-
       belongs_to :picture, :class_name => '::Refinery::Image'
       has_many :clips, :class_name => '::Refinery::Clips::Clip', :dependent => :destroy
 
+      geocoded_by :address
+      after_validation :geocode
+
+      validates :first_name, :presence => true
 
       def full_name
         "#{first_name} #{last_name}"
+      end
+
+      def address
+        "#{city}, Cuba"
       end
 
       def clips
