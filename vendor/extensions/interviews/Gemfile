@@ -1,6 +1,7 @@
 source "http://rubygems.org"
 
 gem 'activerecord-sqlite3-adapter'
+gem 'activerecord-postgresql-adapter'
 
 gemspec
 
