@@ -1,5 +1,7 @@
 source "http://rubygems.org"
 
+gem 'activerecord-sqlite3-adapter'
+
 gemspec
 
 gem 'refinerycms', '~> 2.0.3'
