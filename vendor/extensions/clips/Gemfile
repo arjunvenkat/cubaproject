@@ -4,6 +4,7 @@ gemspec
 
 gem 'refinerycms', '~> 2.0.3'
 
+
 # Database Configuration
 platforms :jruby do
   gem 'activerecord-jdbcsqlite3-adapter'
@@ -18,9 +19,9 @@ platforms :ruby do
   gem 'pg'
 end
 
-group :producion do
-  gem 'fog'
-end
+
+
+
 
 group :development, :test do
   gem 'refinerycms-testing', '~> 2.0.3'
