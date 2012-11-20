@@ -18,7 +18,7 @@
       <nav id='menu' class='navbar <%= css %>'>
 
         <ul class="nav">
-          <li><%= link_to 'Home', '/' %></li>
+          <li class="home-button"><%= link_to '', '/' %></li>
           <%= render :partial => '/refinery/menu_branch', :collection => roots,
                      :locals => {
                        :hide_children => hide_children,

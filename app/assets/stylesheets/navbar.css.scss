@@ -23,7 +23,12 @@
       }
       li:first-child {
         border: 0;
-        width: 70px;
+        width: 36px;
+        background-image: url('house.png');
+        a {
+          min-height: 20px;
+        }
+        background-color: $navbarLinkBackgroundHover;
       }
 
       li:last {
