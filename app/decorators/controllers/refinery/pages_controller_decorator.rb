@@ -16,7 +16,7 @@ protected
                 interview.full_name.parameterize
                ]
       picture = ::Refinery::Image.find_by_id(interview.picture_id)
-      marker << picture.url
+      marker << picture.try(:url)
       interview_markers << marker
     end
 
