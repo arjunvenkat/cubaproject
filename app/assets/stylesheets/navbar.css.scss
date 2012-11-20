@@ -20,6 +20,9 @@
         border-left: 2px solid $navbarLinkBackgroundHover;
         min-height: 36px;
         width: 146px;
+        a {
+          text-align: center;
+        }
       }
       li:first-child {
         border: 0;
