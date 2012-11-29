@@ -40,7 +40,7 @@ Refinery::Pages.configure do |config|
 
   # config.layout_template_whitelist = ["application"]
 
-  config.view_template_whitelist = ["home", "show", "histories", "about"]
+  config.view_template_whitelist = ["home", "show", "histories", "about", "default"]
 
   # config.use_layout_templates = false
 
