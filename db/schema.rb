@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121117045647) do
+ActiveRecord::Schema.define(:version => 20121129215303) do
 
   create_table "refinery_clips", :force => true do |t|
     t.string   "name"
@@ -86,7 +86,7 @@ ActiveRecord::Schema.define(:version => 20121117045647) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "city"
-    t.date     "date_of_entry"
+    t.string   "date_of_entry"
     t.text     "description"
     t.integer  "picture_id"
     t.integer  "position"

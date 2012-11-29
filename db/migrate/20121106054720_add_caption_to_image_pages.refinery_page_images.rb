@@ -4,3 +4,4 @@ class AddCaptionToImagePages < ActiveRecord::Migration
     add_column Refinery::ImagePage.table_name, :caption, :text
   end
 end
+
