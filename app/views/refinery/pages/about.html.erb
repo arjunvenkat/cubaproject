@@ -14,22 +14,22 @@
             </div>
           </div>
           <div class="span5">
-            <div class="image-container">
-              <% if @page.images[i] %>
+            <% if @page.images[i] %>
+              <div class="image-container">
                 <%= image_tag(@page.images[i].url) %>
-              <% end %>
-            </div>
+              </div>
+            <% end %>
           </div>
         </div>
         <br />
       <% else %>
         <div class="row">
           <div class="span5">
-            <div class="image-container">
-              <% if @page.images[i] %>
+            <% if @page.images[i] %>
+              <div class="image-container">
                 <%= image_tag(@page.images[i].url) %>
-              <% end %>
-            </div>
+              </div>
+            <% end %>
           </div>
           <div class="span7">
             <div class="text-container content-container">
