@@ -44,7 +44,9 @@
             <div class="content-container">
               <%= simple_format interview.description %>
               <br />
-              <h4>Interview Clips</h4>
+              <% unless interview.clips.empty? %>
+                <h4>Interview Clips</h4>
+              <% end %>
               <ul class="clips">
                 <% interview.clips.each do |clip| %>
                   <% file = ::Refinery::Resource.find_by_id(clip.file_id) %>
@@ -81,6 +83,9 @@
               <%= simple_format interview.description %>
             </div>
             <div class="content-container">
+              <% unless interview.clips.empty? %>
+                <h4>Interview Clips</h4>
+              <% end %>
               <ul class="clips">
                 <% interview.clips.each do |clip| %>
                   <% file = ::Refinery::Resource.find_by_id(clip.file_id) %>
