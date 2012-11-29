@@ -1,0 +1,41 @@
+@import 'variables';
+
+#first-history {
+  margin-top: 20px;
+  .history {
+    margin-top: 20px;
+    #interview-text {
+     background-color: white;
+     margin-top: -10px;
+    }
+  }
+}
+
+#map-home {
+  height: 300px;
+  img{max-width: inherit;}
+
+  .popup {
+    a {
+      margin-left: 10px;
+    }
+    h4 {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    h5 {
+      margin-bottom: 0;
+    }
+    p {
+      margin-bottom: 0;
+    }
+    div {
+      width: 150px;
+      float: left;
+    }
+    img {
+      width: 120px;
+      margin-right: 10px;
+    }
+  }
+}

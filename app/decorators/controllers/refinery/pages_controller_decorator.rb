@@ -1,5 +1,5 @@
 Refinery::PagesController.class_eval do
-  before_filter :gon_vars, :only => :show
+  before_filter :gon_vars
 
 protected
 
