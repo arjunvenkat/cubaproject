@@ -12,14 +12,18 @@
 <div class="row">
     <div id="map" class="span8"></div>
     <div id="histories-links"class="span4">
-      <div class="content-container">
-        <h3>Interview Participants</h3>
-        <ul>
-          <% @interviews.each do |interview| %>
-            <li><%= link_to interview.full_name, "/#{@page.title.parameterize}##{interview.full_name.parameterize}" %></li>
-          <% end %>
-        </ul>
+      <div class="histories-heading">
+        <div class="content-container">
+          <h3>Interview Participants</h3>
+        </div>
       </div>
+        <div id="link-box">
+          <ul>
+            <% @interviews.each do |interview| %>
+              <li><%= link_to interview.full_name, "/#{@page.title.parameterize}##{interview.full_name.parameterize}" %></li>
+            <% end %>
+          </ul>
+        </div>
     </div>
 </div>
 
@@ -30,22 +34,27 @@
       <% if i.even? %>
         <div class="row">
           <div class="span7 history">
-            <div class="content-container">
-              <a name="<%= interview.full_name.parameterize %>" class="anchor" ></a>
-              <h3><%= interview.full_name %></h3>
-              <%= simple_format interview.description %>
+            <div class="histories-heading">
+              <div class="content-container">
+                <a name="<%= interview.full_name.parameterize %>" class="anchor" ></a>
+                <h3><%= interview.full_name %></h3>
+                <h4><%= interview.city%> - Entered US on <%= interview.date_of_entry %> </h4>
+              </div>
             </div>
             <div class="content-container">
-              <ul>
+              <%= simple_format interview.description %>
+              <br />
+              <h4>Interview Clips</h4>
+              <ul class="clips">
                 <% interview.clips.each do |clip| %>
                   <% file = ::Refinery::Resource.find_by_id(clip.file_id) %>
-                  <li class="clips"><%= link_to clip.name, "/clips/#{clip.id}" %></li>
+                  <li><%= link_to clip.name, "/clips/#{clip.id}" %></li>
                 <% end %>
               </ul>
             </div>
           </div>
           <div class="span5 history">
-            <div class="content-container">
+            <div class="image-container">
               <% picture = ::Refinery::Image.find_by_id(interview.picture_id) %>
               <%= image_tag(picture.url) %>
               <%#= image_tag(interview.images[i].url) %>
@@ -55,22 +64,27 @@
       <% else %>
         <div class="row">
           <div class="span5 history">
-            <div class="content-container">
+            <div class="image-container">
               <% picture = ::Refinery::Image.find_by_id(interview.picture_id) %>
               <%= image_tag(picture.url) %>
             </div>
           </div>
           <div class="span7 history">
+            <div class="histories-heading">
+              <div class="content-container">
+                <a name="<%= interview.full_name.parameterize %>" class="anchor" ></a>
+                <h3><%= interview.full_name %></h3>
+                <h4><%= interview.city%> - Entered US on <%= interview.date_of_entry %> </h4>
+              </div>
+            </div>
             <div class="content-container">
-              <a name="<%= interview.full_name.parameterize %>" class="anchor"></a>
-              <h3><%= interview.full_name %></h3>
               <%= simple_format interview.description %>
             </div>
             <div class="content-container">
-              <ul>
+              <ul class="clips">
                 <% interview.clips.each do |clip| %>
                   <% file = ::Refinery::Resource.find_by_id(clip.file_id) %>
-                  <li class="clips"><%= link_to clip.name, file.url %></li>
+                  <li><%= link_to clip.name, file.url %></li>
                 <% end %>
               </ul>
             </div>

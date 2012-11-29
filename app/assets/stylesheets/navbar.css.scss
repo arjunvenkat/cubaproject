@@ -30,6 +30,9 @@
         background-image: url('house.png');
         a {
           min-height: 20px;
+          &:hover {
+            background-image: url('house.png');
+          }
         }
         background-color: $navbarLinkBackgroundHover;
       }
