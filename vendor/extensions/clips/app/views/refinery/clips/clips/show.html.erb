@@ -1,5 +1,9 @@
 <% content_for :body_content_title do %>
-  <%= @clip.name %>
+  <% if ::I18n.locale == :es %>
+    <%= @clip.name_es %>
+  <% else %>
+    <%= @clip.name %>
+  <% end %>
 <% end %>
 
 <% content_for :javascripts do %>
@@ -29,6 +33,13 @@ $(document).ready(function(){
 //]]>
 </script>
   <div class="row">
+  <div class="title span9 offset3">
+    <% if ::I18n.locale == :es %>
+      <h2 class="page-heading"><%= @clip.name_es %></h2>
+    <% else %>
+      <h2 class="page-heading"><%= @clip.name %></h2>
+    <% end %>
+  </div>
   <div class ="span6 offset3 content-container">
    <div id="jquery_jplayer_1" class="jp-jplayer"></div>
 
@@ -63,7 +74,11 @@ $(document).ready(function(){
         </div>
         <div class="jp-title">
           <ul>
-            <li><%=raw @clip.name %></li>
+            <% if ::I18n.locale == :es %>
+              <li><%=raw @clip.name_es %></li>
+            <% else %>
+              <li><%=raw @clip.name %></li>
+            <% end %>
           </ul>
         </div>
         <div class="jp-no-solution">

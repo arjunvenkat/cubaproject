@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121129215303) do
+ActiveRecord::Schema.define(:version => 20121130162223) do
 
   create_table "refinery_clips", :force => true do |t|
     t.string   "name"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(:version => 20121129215303) do
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
     t.integer  "interview_id"
+    t.string   "name_es"
   end
 
   create_table "refinery_copywriting_phrase_translations", :force => true do |t|
@@ -90,10 +91,11 @@ ActiveRecord::Schema.define(:version => 20121129215303) do
     t.text     "description"
     t.integer  "picture_id"
     t.integer  "position"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
     t.float    "latitude"
     t.float    "longitude"
+    t.text     "description_es"
   end
 
   create_table "refinery_page_part_translations", :force => true do |t|

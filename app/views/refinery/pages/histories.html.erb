@@ -42,15 +42,27 @@
               </div>
             </div>
             <div class="content-container">
-              <%= simple_format interview.description %>
+              <% if ::I18n.locale == :es %>
+                <%= simple_format interview.description_es %>
+              <% else %>
+                <%= simple_format interview.description %>
+              <% end %>
               <br />
               <% unless interview.clips.empty? %>
-                <h4>Interview Clips</h4>
+                <% if ::I18n.locale == :es %>
+                  <h4>Fragmentos de Entrevistas</h4>
+                <% else %>
+                  <h4>Interview Clips</h4>
+                <% end %>
               <% end %>
               <ul class="clips">
                 <% interview.clips.each do |clip| %>
                   <% file = ::Refinery::Resource.find_by_id(clip.file_id) %>
-                  <li><%= link_to clip.name, "/clips/#{clip.id}" %></li>
+                  <% if ::I18n.locale == :es %>
+                    <li><%= link_to clip.name_es, "/es/clips/#{clip.id}" %></li>
+                  <% else %>
+                    <li><%= link_to clip.name, "/clips/#{clip.id}" %></li>
+                  <% end %>
                 <% end %>
               </ul>
             </div>
@@ -80,7 +92,11 @@
               </div>
             </div>
             <div class="content-container">
-              <%= simple_format interview.description %>
+              <% if ::I18n.locale == :es %>
+                <%= simple_format interview.description_es %>
+              <% else %>
+                <%= simple_format interview.description %>
+              <% end %>
             </div>
             <div class="content-container">
               <% unless interview.clips.empty? %>

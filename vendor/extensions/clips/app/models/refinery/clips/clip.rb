@@ -3,7 +3,7 @@ module Refinery
     class Clip < Refinery::Core::BaseModel
       self.table_name = 'refinery_clips'
 
-      attr_accessible :name, :length, :file_id, :interview_id, :position
+      attr_accessible :name, :name_es, :length, :file_id, :interview_id, :position
 
       acts_as_indexed :fields => [:name, :length]
 

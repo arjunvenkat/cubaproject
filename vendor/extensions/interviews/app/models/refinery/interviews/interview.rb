@@ -3,7 +3,7 @@ module Refinery
     class Interview < Refinery::Core::BaseModel
       self.table_name = 'refinery_interviews'
 
-      attr_accessible :first_name, :last_name, :city, :date_of_entry, :description, :picture_id, :position
+      attr_accessible :first_name, :last_name, :city, :date_of_entry, :description, :description_es, :picture_id, :position
 
       acts_as_indexed :fields => [:first_name, :last_name, :city, :description]
 
