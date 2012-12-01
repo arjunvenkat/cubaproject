@@ -38,7 +38,11 @@
               <div class="content-container">
                 <a name="<%= interview.full_name.parameterize %>" class="anchor" ></a>
                 <h3><%= interview.full_name %></h3>
-                <h4><%= interview.city%> - Entered US on <%= interview.date_of_entry %> </h4>
+                <% if ::I18n.locale == :es %>
+                  <h4><%= interview.city%> - Entró en US <%= interview.date_of_entry %> </h4>
+                <% else %>
+                  <h4><%= interview.city%> - Entered US on <%= interview.date_of_entry %> </h4>
+                <% end %>
               </div>
             </div>
             <div class="content-container">

@@ -6,7 +6,11 @@
 <div class="row">
   <% if interview %>
   <div class="title span12">
-    <h2 class="page-heading">Our latest interview - <%= interview.full_name %> </h2>
+    <% if ::I18n.locale == :es %>
+      <h2 class="page-heading">Nuestra última entrevista - <%= interview.full_name %> </h2>
+    <% else %>
+      <h2 class="page-heading">Our latest interview - <%= interview.full_name %> </h2>
+    <% end %>
   </div>
     <div id="first-history">
       <div class="span7">
@@ -16,20 +20,36 @@
             <div class="content-container">
               <a name="<%= interview.full_name.parameterize %>" class="anchor" ></a>
               <h3><%= interview.full_name %></h3>
-              <h4><%= interview.city%> - Entered US on <%= interview.date_of_entry %> </h4>
+              <% if ::I18n.locale == :es %>
+                <h4><%= interview.city%> - Entró en US <%= interview.date_of_entry %> </h4>
+              <% else %>
+                <h4><%= interview.city%> - Entered US on <%= interview.date_of_entry %> </h4>
+              <% end %>
             </div>
           </div>
           <div id="interview-text">
             <div class="content-container">
-              <%= simple_format interview.description %>
+              <% if ::I18n.locale == :es %>
+                <%= simple_format interview.description_es %>
+              <% else %>
+                <%= simple_format interview.description %>
+              <% end %>
               <br />
               <% unless interview.clips.empty? %>
-                <h4>Interview Clips</h4>
+                <% if ::I18n.locale == :es %>
+                  <h4>Fragmentos de Entrevistas</h4>
+                <% else %>
+                  <h4>Interview Clips</h4>
+                <% end %>
               <% end %>
               <ul class="clips">
                 <% interview.clips.each do |clip| %>
                   <% file = ::Refinery::Resource.find_by_id(clip.file_id) %>
-                  <li><%= link_to clip.name, "/clips/#{clip.id}" %></li>
+                  <% if ::I18n.locale == :es %>
+                    <li><%= link_to clip.name_es, "/es/clips/#{clip.id}" %></li>
+                  <% else %>
+                    <li><%= link_to clip.name, "/clips/#{clip.id}" %></li>
+                  <% end %>
                 <% end %>
               </ul>
             </div>
