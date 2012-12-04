@@ -21,7 +21,7 @@
               <a name="<%= interview.full_name.parameterize %>" class="anchor" ></a>
               <h3><%= interview.full_name %> - <%= interview.city%></h3>
               <% if ::I18n.locale == :es %>
-                <h4>Llegó a los EE.UU: <%= interview.date_of_entry %> </h4>
+                <h4>Llegó a los EE.UU.: <%= interview.date_of_entry %> </h4>
               <% else %>
                 <h4>Arrived in the US: <%= interview.date_of_entry %> </h4>
               <% end %>
