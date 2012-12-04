@@ -14,7 +14,11 @@
     <div id="histories-links"class="span4">
       <div class="histories-heading">
         <div class="content-container">
-          <h3>Interview Participants</h3>
+          <% if ::I18n.locale == :es %>
+            <h3>Participantes de las entravistas</h3>
+          <% else %>
+            <h3>Interview Participants</h3>
+          <% end %>
         </div>
       </div>
         <div id="link-box">
