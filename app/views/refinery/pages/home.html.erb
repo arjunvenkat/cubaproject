@@ -7,7 +7,7 @@
   <% if interview %>
   <div class="title span12">
     <% if ::I18n.locale == :es %>
-      <h2 class="page-heading">Nuestra última entrevista - <%= interview.full_name %> </h2>
+      <h2 class="page-heading">Nuestra entravista más reciente - <%= interview.full_name %> </h2>
     <% else %>
       <h2 class="page-heading">Our latest interview - <%= interview.full_name %> </h2>
     <% end %>
@@ -19,11 +19,11 @@
           <div class="histories-heading">
             <div class="content-container">
               <a name="<%= interview.full_name.parameterize %>" class="anchor" ></a>
-              <h3><%= interview.full_name %></h3>
+              <h3><%= interview.full_name %> - <%= interview.city%></h3>
               <% if ::I18n.locale == :es %>
-                <h4><%= interview.city%> - Entró en US <%= interview.date_of_entry %> </h4>
+                <h4>Llegó a los EE.UU: <%= interview.date_of_entry %> </h4>
               <% else %>
-                <h4><%= interview.city%> - Entered US on <%= interview.date_of_entry %> </h4>
+                <h4>Arrived in the US: <%= interview.date_of_entry %> </h4>
               <% end %>
             </div>
           </div>
@@ -37,7 +37,7 @@
               <br />
               <% unless interview.clips.empty? %>
                 <% if ::I18n.locale == :es %>
-                  <h4>Fragmentos de Entrevistas</h4>
+                  <h4>Segmentos de la entravista</h4>
                 <% else %>
                   <h4>Interview Clips</h4>
                 <% end %>
