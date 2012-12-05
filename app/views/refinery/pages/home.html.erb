@@ -33,9 +33,8 @@
           </div>
         </div>
         <div class="image-container">
-          <% picture = ::Refinery::Image.find_by_id(interview.picture_id) %>
-          <%= image_tag(picture.url) if picture %>
-          <%#= image_tag(interview.images[i].url) %>
+            <% picture = ::Refinery::Image.find_by_id(interview.picture_id) %>
+            <%= image_tag(picture.url) if picture %>
         </div>
 
           <!-- <div class="span5" id="map-home"></div> -->
@@ -62,6 +61,25 @@
           </div>
         </div>
         <div id="map-home"></div>
+        <div class="histories-heading">
+          <div class="content-container">
+            <h3>
+              <% if ::I18n.locale == :es %>
+                <%= interview.first_name %>'s story
+              <% else %>
+                La historia de <%= interview.full_name %>
+              <% end %>
+            </h3>
+          </div>
+        </div>
+        <div class="interview-text">
+          <div class="content-container">
+            <% if ::I18n.locale == :es %>
+              <%= simple_format interview.description_es %>
+            <% else %>
+              <%= simple_format interview.description %>
+            <% end %>
+          </div>
     </div>
   </div>
 <% end %>
