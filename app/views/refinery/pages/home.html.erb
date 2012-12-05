@@ -65,9 +65,9 @@
           <div class="content-container">
             <h3>
               <% if ::I18n.locale == :es %>
-                <%= interview.first_name %>'s story
+                La historia de <%= interview.first_name %>
               <% else %>
-                La historia de <%= interview.full_name %>
+                <%= interview.first_name %>'s story
               <% end %>
             </h3>
           </div>
