@@ -27,19 +27,9 @@
           var infowindowContent = "<div class='popup'>" +
                                     "<div>" +
                                       "<h4>" + locations[last_loc][0] + "</h4>" +
-                                      "<p>" + locations[last_loc][3] + "</p>" +
-                                      "<h5>Date of Entry:</h5>" +
-                                      "<p>" + locations[last_loc][4] + "</p>" +
-                                    "</div>" +
-                                    "<div>" +
                                       "<a href=/oral-histories#" +
-                                      locations[last_loc][5] +
-                                      "><img src=" +
-                                      locations[last_loc][6] +
-                                      "></a>" +
-                                      "<p><a href=/oral-histories#" +
                                         locations[last_loc][5] +
-                                        ">More info</a><p>" +
+                                        ">More info</a>" +
                                     "</div>" +
                                   "</div>"
 
