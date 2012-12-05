@@ -4,7 +4,7 @@
 
      var mapOptions = {
         center: new google.maps.LatLng(21.5, -79.4),
-        zoom: 5,
+        zoom: 6,
         // disableDefaultUI: true,
         mapTypeId: google.maps.MapTypeId.ROADMAP
       };

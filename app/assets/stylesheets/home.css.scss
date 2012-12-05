@@ -3,15 +3,20 @@
 .interview-text {
  background-color: white;
  margin-top: -10px;
+ margin-bottom: 20px;
+}
+
+.top-space {
+  margin-top: 60px;
 }
 
 #first-history {
   h3 {
     margin-bottom: 5px;
   }
-  margin-top: 60px;
   .history {
-    margin-top: 20px;
+    margin-top: 0px;
+    margin-bottom: 20px;
   }
 }
 

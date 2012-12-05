@@ -3,20 +3,10 @@
 <% end %>
 <% interview = @interviews.last %>
 
-<div class="row">
-  <% if interview %>
-    <div id="first-history">
-      <div class="span7">
-        <div class="row">
-          <div class="span3">
-            <div class="image-container">
-              <% picture = ::Refinery::Image.find_by_id(interview.picture_id) %>
-              <%= image_tag(picture.url) if picture %>
-              <%#= image_tag(interview.images[i].url) %>
-            </div>
-          </div>
-          <div class="span4" id="map-home"></div>
-        </div>
+<% if interview %>
+  <div class="top-space row">
+    <div class="span6">
+      <div id="first-history">
         <div class="history">
           <div class="histories-heading">
             <div class="content-container">
@@ -42,8 +32,18 @@
             </div>
           </div>
         </div>
+        <div class="image-container">
+          <% picture = ::Refinery::Image.find_by_id(interview.picture_id) %>
+          <%= image_tag(picture.url) if picture %>
+          <%#= image_tag(interview.images[i].url) %>
+        </div>
+
+          <!-- <div class="span5" id="map-home"></div> -->
       </div>
-      <div class="span5">
+    </div>
+
+
+    <div class="span6">
         <div class="histories-heading">
           <div class="content-container">
             <h3>
@@ -58,10 +58,11 @@
               <%= copywriting('home_content', {:scope => 'home', :default => 'content' }) %>
             <p>
             <br />
-            <div class="fb-like" data-href="http://www.facebook.com/ChicagoCubaProject" data-send="true" data-width="355" data-show-faces="true"></div>
+            <div class="fb-like" data-href="http://www.facebook.com/ChicagoCubaProject" data-send="true" data-width="360" data-show-faces="true"></div>
           </div>
         </div>
-      </div>
+        <div id="map-home"></div>
     </div>
-  <% end %>
-</div>
+  </div>
+<% end %>
+
