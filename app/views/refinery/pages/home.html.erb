@@ -35,9 +35,9 @@
           <div class="interview-text">
             <div class="content-container">
               <% if ::I18n.locale == :es %>
-                To learn more about <%= interview.first_name %> and other Cubans living in the Chicago area, click <%= link_to 'here.', 'here' %>
-              <% else %>
                 Para aprender más sobre <%= interview.first_name %> y otros Cubanos que viven en el área de Chicago, haga cliq <%= link_to 'aquí.', '/oral-histories' %>
+              <% else %>
+                To learn more about <%= interview.first_name %> and other Cubans living in the Chicago area, click <%= link_to 'here.', 'here' %>
               <% end %>
             </div>
           </div>
