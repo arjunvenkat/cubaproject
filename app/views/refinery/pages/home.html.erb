@@ -5,62 +5,61 @@
 
 <div class="row">
   <% if interview %>
-  <div class="title span12">
-    <% if ::I18n.locale == :es %>
-      <h2 class="page-heading">Nuestra entravista más reciente - <%= interview.full_name %> </h2>
-    <% else %>
-      <h2 class="page-heading">Our latest interview - <%= interview.full_name %> </h2>
-    <% end %>
-  </div>
     <div id="first-history">
       <div class="span7">
-        <div id="map-home"></div>
+        <div class="row">
+          <div class="span3">
+            <div class="image-container">
+              <% picture = ::Refinery::Image.find_by_id(interview.picture_id) %>
+              <%= image_tag(picture.url) if picture %>
+              <%#= image_tag(interview.images[i].url) %>
+            </div>
+          </div>
+          <div class="span4" id="map-home"></div>
+        </div>
         <div class="history">
           <div class="histories-heading">
             <div class="content-container">
               <a name="<%= interview.full_name.parameterize %>" class="anchor" ></a>
-              <h3><%= interview.full_name %> - <%= interview.city%></h3>
               <% if ::I18n.locale == :es %>
+              <h3>Nuestra entravista más reciente<h3>
+              <h4><%= interview.full_name %> - <%= interview.city%></h4>
                 <h4>Llegó a los EE.UU.: <%= interview.date_of_entry %> </h4>
               <% else %>
+              <h3>Our latest interview<h3>
+              <h4><%= interview.full_name %> - <%= interview.city%></h4>
                 <h4>Arrived in the US: <%= interview.date_of_entry %> </h4>
               <% end %>
             </div>
           </div>
-          <div id="interview-text">
+          <div class="interview-text">
             <div class="content-container">
               <% if ::I18n.locale == :es %>
-                <%= simple_format interview.description_es %>
+                To learn more about <%= interview.first_name %> and other Cubans living in the Chicago area, click <%= link_to 'here', 'here' %>
               <% else %>
-                <%= simple_format interview.description %>
+                To learn more about <%= interview.first_name %> and other Cubans living in the Chicago area, click <%= link_to 'here', '/oral-histories' %>
               <% end %>
-              <br />
-              <% unless interview.clips.empty? %>
-                <% if ::I18n.locale == :es %>
-                  <h4>Segmentos de la entravista</h4>
-                <% else %>
-                  <h4>Interview Clips</h4>
-                <% end %>
-              <% end %>
-              <ul class="clips">
-                <% interview.clips.each do |clip| %>
-                  <% file = ::Refinery::Resource.find_by_id(clip.file_id) %>
-                  <% if ::I18n.locale == :es %>
-                    <li><%= link_to clip.name_es, "/es/clips/#{clip.id}" %></li>
-                  <% else %>
-                    <li><%= link_to clip.name, "/clips/#{clip.id}" %></li>
-                  <% end %>
-                <% end %>
-              </ul>
             </div>
           </div>
         </div>
       </div>
       <div class="span5">
-        <div class="image-container">
-          <% picture = ::Refinery::Image.find_by_id(interview.picture_id) %>
-          <%= image_tag(picture.url) %>
-          <%#= image_tag(interview.images[i].url) %>
+        <div class="histories-heading">
+          <div class="content-container">
+            <h3>
+              <%= copywriting('home_title', {:phrase_type =>
+                'string', :scope => 'home', :default => 'title' }) %>
+            </h3>
+          </div>
+        </div>
+        <div class="interview-text">
+          <div class="content-container">
+            <p>
+              <%= copywriting('home_content', {:scope => 'home', :default => 'content' }) %>
+            <p>
+            <br />
+            <div class="fb-like" data-href="http://www.facebook.com/ChicagoCubaProject" data-send="true" data-width="355" data-show-faces="true"></div>
+          </div>
         </div>
       </div>
     </div>

@@ -1,0 +1,57 @@
+<div class="row">
+  <div class="title span12">
+    <div class="inline">
+      <h2 class="page-heading inline"><%= @page.title %></h2>
+    </div>
+  </div>
+  <div id="about" class="span12">
+    <% @page.parts.each_with_index do |part, i| %>
+      <% if i.even? %>
+        <div class="row">
+          <div class="span7">
+            <div class="text-container content-container">
+            <%= simple_format part.body %>
+            </div>
+          </div>
+          <div class="span5">
+            <% if @page.images[i] %>
+              <div class="image-container">
+                <%= image_tag(@page.images[i].url) %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+        <br />
+      <% else %>
+        <div class="row">
+          <div class="span5">
+            <% if @page.images[i] %>
+              <div class="image-container">
+                <%= image_tag(@page.images[i].url) %>
+              </div>
+            <% end %>
+          </div>
+          <div class="span7">
+            <div class="text-container content-container">
+            <%= simple_format part.body %>
+            </div>
+          </div>
+        </div>
+        <br />
+      <% end %>
+    <% end %>
+  </div>
+</div>
+  <div class="row">
+    <div class="span11">
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+        <input type="hidden" name="cmd" value="_s-xclick">
+        <input type="hidden" name="hosted_button_id" value="XM6RSHHLCDFT2">
+        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+        <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+      </form>
+    </div>
+  </div>
+
+
+

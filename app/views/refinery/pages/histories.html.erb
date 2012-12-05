@@ -78,7 +78,7 @@
           <div class="span5 history">
             <div class="image-container">
               <% picture = ::Refinery::Image.find_by_id(interview.picture_id) %>
-              <%= image_tag(picture.url) %>
+              <%= image_tag(picture.url) if picture %>
               <%#= image_tag(interview.images[i].url) %>
             </div>
           </div>
@@ -88,7 +88,7 @@
           <div class="span5 history">
             <div class="image-container">
               <% picture = ::Refinery::Image.find_by_id(interview.picture_id) %>
-              <%= image_tag(picture.url) %>
+              <%= image_tag(picture.url) if picture %>
             </div>
           </div>
           <div class="span7 history">
