@@ -11,7 +11,16 @@
       var map = new google.maps.Map(document.getElementById("map-home"),
           mapOptions);
 
-      var locations = gon.interview_markers;
+      if (gon.spanish == true)
+        {
+        var locations = gon.interview_markers_es;
+        var more_info = "más info";
+        }
+      else
+        {
+        var locations = gon.interview_markers;
+        var more_info = "more info";
+        }
       var marker, i;
       var infowindow = new google.maps.InfoWindow();
 
@@ -29,7 +38,7 @@
                                       "<h4>" + locations[last_loc][0] + "</h4>" +
                                       "<a href=/oral-histories#" +
                                         locations[last_loc][5] +
-                                        ">More info</a>" +
+                                        ">" + more_info + "</a>" +
                                     "</div>" +
                                   "</div>"
 

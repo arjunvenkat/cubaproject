@@ -10,10 +10,21 @@
       };
       var map = new google.maps.Map(document.getElementById("map"),
           mapOptions);
-
-      var locations = gon.interview_markers;
+      if (gon.spanish == true)
+        {
+        var locations = gon.interview_markers_es;
+        var date_title = "Fecha de Entrada:";
+        var more_info = "más info";
+        }
+      else
+        {
+        var locations = gon.interview_markers;
+        var date_title = "Date of Entry:";
+        var more_info = "more info";
+        }
       var marker, i;
       var infowindow = new google.maps.InfoWindow();
+
 
       for (i = 0; i < locations.length; i++) {
         marker = new google.maps.Marker({
@@ -28,7 +39,7 @@
                                     "<div>" +
                                       "<h4>" + locations[i][0] + "</h4>" +
                                       "<p>" + locations[i][3] + "</p>" +
-                                      "<h5>Date of Entry:</h5>" +
+                                      "<h5>" + date_title + "</h5>" +
                                       "<p>" + locations[i][4] + "</p>" +
                                     "</div>" +
                                     "<div>" +
@@ -39,7 +50,7 @@
                                       "></a>" +
                                       "<p><a href=/oral-histories#" +
                                         locations[i][5] +
-                                        ">More info</a><p>" +
+                                        ">" + more_info + "</a><p>" +
                                     "</div>" +
                                   "</div>"
 
