@@ -4,7 +4,7 @@ Refinery::PagesController.class_eval do
 protected
 
   def gon_vars
-    @interviews = ::Refinery::Interviews::Interview.all
+    @interviews = ::Refinery::Interviews::Interview.find(:all, :order => 'first_name')
     interview_markers = []
     @interviews.each do |interview|
       marker = [
