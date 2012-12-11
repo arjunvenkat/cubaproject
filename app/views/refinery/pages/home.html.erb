@@ -13,8 +13,8 @@
               <a name="<%= interview.full_name.parameterize %>" class="anchor" ></a>
               <% if ::I18n.locale == :es %>
               <h3>Nuestra entravista más reciente<h3>
-              <h4><%= interview.full_name %> - <%= interview.city%></h4>
-                <h4>Llegó a los EE.UU.: <%= interview.date_of_entry %> </h4>
+              <h4><%= interview.full_name %> - <%= interview.city_es%></h4>
+                <h4>Llegó a los EE.UU.: <%= interview.date_of_entry_es %> </h4>
               <% else %>
               <h3>Our latest interview<h3>
               <h4><%= interview.full_name %> - <%= interview.city%></h4>
@@ -25,7 +25,7 @@
           <div class="interview-text">
             <div class="content-container">
               <% if ::I18n.locale == :es %>
-                Para aprender más sobre <%= interview.first_name %> y otros Cubanos que viven en el área de Chicago, haga cliq <%= link_to 'aquí.', '/oral-histories' %>
+                Para aprender más sobre <%= interview.first_name %> y otros Cubanos que viven en el área de Chicago, haga cliq <%= link_to 'aquí.', '/es/oral-histories' %>
               <% else %>
                 To learn more about <%= interview.first_name %> and other Cubans living in the Chicago area, click <%= link_to 'here.', '/oral-histories' %>
               <% end %>

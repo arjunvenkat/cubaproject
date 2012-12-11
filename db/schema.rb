@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121130162223) do
+ActiveRecord::Schema.define(:version => 20121210235220) do
 
   create_table "refinery_clips", :force => true do |t|
     t.string   "name"
@@ -91,11 +91,13 @@ ActiveRecord::Schema.define(:version => 20121130162223) do
     t.text     "description"
     t.integer  "picture_id"
     t.integer  "position"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at",                                   :null => false
+    t.datetime "updated_at",                                   :null => false
     t.float    "latitude"
     t.float    "longitude"
     t.text     "description_es"
+    t.string   "city_es",          :default => "espanol city"
+    t.string   "date_of_entry_es", :default => "espanol date"
   end
 
   create_table "refinery_page_part_translations", :force => true do |t|

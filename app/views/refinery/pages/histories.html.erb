@@ -41,10 +41,11 @@
             <div class="histories-heading">
               <div class="content-container">
                 <a name="<%= interview.full_name.parameterize %>" class="anchor" ></a>
-                <h3><%= interview.full_name %> - <%= interview.city%></h3>
                 <% if ::I18n.locale == :es %>
-                  <h4>Llegó a los EE.UU.: <%= interview.date_of_entry %> </h4>
+                  <h3><%= interview.full_name %> - <%= interview.city_es%></h3>
+                  <h4>Llegó a los EE.UU.: <%= interview.date_of_entry_es %> </h4>
                 <% else %>
+                  <h3><%= interview.full_name %> - <%= interview.city%></h3>
                   <h4>Arrived in the US: <%= interview.date_of_entry %> </h4>
                 <% end %>
               </div>
@@ -95,10 +96,11 @@
             <div class="histories-heading">
               <div class="content-container">
                 <a name="<%= interview.full_name.parameterize %>" class="anchor" ></a>
-                <h3><%= interview.full_name %> - <%= interview.city%></h3>
                 <% if ::I18n.locale == :es %>
-                  <h4>Llegó a los EE.UU.: <%= interview.date_of_entry %> </h4>
+                  <h3><%= interview.full_name %> - <%= interview.city_es%></h3>
+                  <h4>Llegó a los EE.UU.: <%= interview.date_of_entry_es %> </h4>
                 <% else %>
+                  <h3><%= interview.full_name %> - <%= interview.city%></h3>
                   <h4>Arrived in the US: <%= interview.date_of_entry %> </h4>
                 <% end %>
               </div>
