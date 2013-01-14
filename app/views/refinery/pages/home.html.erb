@@ -1,9 +1,7 @@
 <% content_for :javascripts do %>
   <%= javascript_include_tag 'map_home' %>
 <% end %>
-<% interview = @interviews.last %>
-
-
+<% interview = @most_recent_interview %>
 <% if interview %>
   <div class="top-space row">
     <div class="span6">

@@ -5,6 +5,7 @@ protected
 
   def gon_vars
     @interviews = ::Refinery::Interviews::Interview.find(:all, :order => 'first_name')
+    @most_recent_interview = ::Refinery::Interviews::Interview.last
     interview_markers = []
     interview_markers_es = []
     @interviews.each do |interview|
