@@ -13,12 +13,12 @@
 
       if (gon.spanish == true)
         {
-        var locations = gon.interview_markers_es;
+        var locations = gon.most_recent_interview_marker_es;
         var more_info = "más info";
         }
       else
         {
-        var locations = gon.interview_markers;
+        var locations = gon.most_recent_interview_marker;
         var more_info = "more info";
         }
       var marker, i;

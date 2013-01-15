@@ -8,6 +8,8 @@ protected
     @most_recent_interview = ::Refinery::Interviews::Interview.last
     interview_markers = []
     interview_markers_es = []
+    most_recent_interview_marker = []
+    most_recent_interview_marker_es = []
     @interviews.each do |interview|
       marker = [
                 interview.full_name,
@@ -34,11 +36,34 @@ protected
 
 
     end
+      most_recent_interview_marker = [
+                @most_recent_interview.full_name,
+                @most_recent_interview.latitude,
+                @most_recent_interview.longitude,
+                @most_recent_interview.address,
+                @most_recent_interview.date_of_entry,
+                @most_recent_interview.full_name.parameterize
+               ]
+      picture = ::Refinery::Image.find_by_id(@most_recent_interview.picture_id)
+      most_recent_interview_marker << picture.try(:url)
+
+
+      most_recent_interview_marker_es = [
+                @most_recent_interview.full_name,
+                @most_recent_interview.latitude,
+                @most_recent_interview.longitude,
+                @most_recent_interview.address_es,
+                @most_recent_interview.date_of_entry_es,
+                @most_recent_interview.full_name.parameterize
+               ]
+      most_recent_interview_marker_es << picture.try(:url)
     @spanish = ::I18n.locale == :es
 
     gon.spanish = @spanish
     gon.interview_markers = interview_markers
     gon.interview_markers_es = interview_markers_es
+    gon.most_recent_interview_marker = [most_recent_interview_marker]
+    gon.most_recent_interview_marker_es = [most_recent_interview_marker_es]
   end
 
 end
